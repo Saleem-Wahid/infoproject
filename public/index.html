@@ -1,22 +1,43 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trending Tunes</title>
 
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/9.6.11/firebase-app-compat.js"></script>
     <!-- include only the Firebase features as you need -->
     <script defer src="/__/firebase/9.6.11/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/9.6.11/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/9.6.11/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/9.6.11/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/9.6.11/firebase-messaging-compat.js"></script>
+    <script
+      defer
+      src="/__/firebase/9.6.11/firebase-database-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/9.6.11/firebase-firestore-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/9.6.11/firebase-functions-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/9.6.11/firebase-messaging-compat.js"
+    ></script>
     <script defer src="/__/firebase/9.6.11/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/9.6.11/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/9.6.11/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/9.6.11/firebase-performance-compat.js"></script>
+    <script
+      defer
+      src="/__/firebase/9.6.11/firebase-analytics-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/9.6.11/firebase-remote-config-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/9.6.11/firebase-performance-compat.js"
+    ></script>
     <!-- 
       initialize the SDK after all desired features are loaded, set useEmulator to false
       to avoid connecting the SDK to running emulators.
@@ -24,25 +45,306 @@
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 
     <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      body {
+        background: #eceff1;
+        color: rgba(0, 0, 0, 0.87);
+        font-family: Roboto, Helvetica, Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      #message {
+        background: white;
+        max-width: 360px;
+        margin: 100px auto 16px;
+        padding: 32px 24px;
+        border-radius: 3px;
+      }
+      #message h2 {
+        color: #ffa100;
+        font-weight: bold;
+        font-size: 16px;
+        margin: 0 0 8px;
+      }
+      #message h1 {
+        font-size: 22px;
+        font-weight: 300;
+        color: rgba(0, 0, 0, 0.6);
+        margin: 0 0 16px;
+      }
+      #message p {
+        line-height: 140%;
+        margin: 16px 0 24px;
+        font-size: 14px;
+      }
+      #message a {
+        display: block;
+        text-align: center;
+        background: #039be5;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: white;
+        padding: 16px;
+        border-radius: 4px;
+      }
+      #message,
+      #message a {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      }
+      #load {
+        color: rgba(0, 0, 0, 0.4);
+        text-align: center;
+        font-size: 13px;
+      }
       @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
+        body,
+        #message {
+          margin-top: 0;
+          background: white;
+          box-shadow: none;
+        }
+        body {
+          border-top: 16px solid #ffa100;
+        }
       }
     </style>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://use.fontawesome.com/releases/v6.1.1/css/all.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/quasar@2.6.6/dist/quasar.prod.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/animate.css@^4.0.0/animate.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
   </head>
   <body>
-    asd123
+    <div id="app">
+      <header>
+        <div class="topnav">
+          <a class="active" href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#music">Music</a>
+          <!--Brandon HTML/JS-->
+                    <div class="container">        
+          <form action="">
+              <input type="hidden" id='toke'>
+              <div class="col-sm-6 form-group row mt-4 px-0">
+                  <label for="Genre" class="form-label col-sm-2">Genre:</label>
+                  <select name="" id="Pick_A_genre" class="form-control form-control-sm col-sm-10">
+                      <option>Choose Genre...</option>                    
+                  </select>
+              </div>
+              <div class="col-sm-6 form-group row px-0">
+                  <label for="Genre" class="form-label col-sm-2">Playlists:</label>
+                  <select name="" id="Pick_A_playlist" class="form-control form-control-sm col-sm-10">
+                      <option>Choose Playlist...</option>                    
+                  </select>
+              </div>                  
+              <div class="col-sm-6 row form-group px-0">
+                  <button type="submit" id="searchit" class="btn btn-success col-sm-12">Search</button>
+              </div>          
+          </form>        
+          <div class="row">
+              <div class="col-sm-6 px-0">
+                  <div class="list-group tracks_">
+                      
+                  </div>                                             
+              </div>
+              <div class="offset-md-1 col-sm-4" id="tracdata">                
+              </div>
+          </div>   
+      </div>
+  <!--  <input type="text" placeholder="Search...">
+        </div>-->
+        <!--Brandon HTML/JAVA END-->
+      </header>
+  
+      <center>
+        <figure>
+        <img src="images/ttuneslogo.png" style="width: 600px;">
+              </figure>
+        <h4>Listen to the newest, hotest and trending songs</h4>
+      </center>
+  
+        <center><section> 
+          <div class="row">
+          <a href="#hotmusic">  
+              <div class="column">
+                <div class="container">
+                  <img src="images/flame.png" class="image">
+                  <div class="overlay">
+                    <div class="text">Hot</div>
+                  </div>
+                </div>
+              </div>
+          
+          </a>
+  
+         
+          <a href="#trendingmusic">
+            <div class="column">
+              <div class="container">
+                <img src="images/trend.png" class="image">
+                <div class="overlay">
+                  <div class="text">Trending</div>
+                </div>
+              </div>
+            </div>
+          </a>
+  
+            
+          <a href="#newmusic">
+            <div class="column">
+              <div class="container">
+                <img src="images/neo.png" class="image">
+                <div class="overlay">
+                  <div class="text">New</div>
+                </div>
+              </div>
+            </div>
+          </a>
+          </div>
+    </section></center>
+  
+    <section id="hotmusic">
+      <p class="solid">
+        <center>
+          <img src="images/hot.png" style="width: 400px;">
+        </center>
+      </p>
+  
+    </section>
+  
+    <section id="trendingmusic">
+      <p class="solid">
+        <center>
+          <img src="images/trending.png" style="width: 400px;">
+        </center>
+        <! ╌ Saleem HTML/CSS/JS -->
+          <q-btn @click="getTrendingMusic" class="message"> Get Trending Music </q-btn>
+      </p>
+  
+  
+    </section>
+  
+    <section id="newmusic">
+      <p class="solid">
+        <center>
+          <img src="images/new.png" style="width: 400px;"></center>
+      <center class="row">
+        <div class="newmusic" v-if="newMusicReady" v-for="(music, index) in getNewMusic" :key=index>
+          {{music.album_type}}
+        </div>
+      </center>
+      </p>
+      <! ╌ Saleem HTML/CSS/JS -->
+        <q-btn @click="auth" class="message"> {{message}} </q-btn>
+        <q-btn @click="getNewMusic" class="message"> Get Music </q-btn>
+    </section>
+    </div>
+
+    <! ╌ Saleem JS Section -->
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
+      const {ref, createApp} = Vue;
+      const app = createApp({
+        setup() {
+          let token;
+          let newMusic;
+          let newMusicReady = ref(false);
+          let trendingMusic;
+          const message = "Hello!"
+          const client_id = '77413e7632024c3c81c379890c19253d';
+          const client_secret = 'ed4ff73df62844d8b0df62c5b9e3ad9d';
+          const redirect_uri = 'https://saleem-wahid.github.io/the-trending-tunes/';
+
+          // Make spotify token
+          const auth = async () => {
+            const result = await fetch('https://accounts.spotify.com/api/token', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Authorization': 'Basic ' + btoa(client_id + ':' + client_secret)
+              },
+              body: 'grant_type=client_credentials',
+            })
+            const data = await result.json();
+            console.log(data)
+            token = data;
+          }
+
+          // Getting Hot Music from spotify using token
+          const getMusic = async () => {
+            const result = await fetch('https://api.spotify.com/v1/search/6rqhFgbbKwnb9MLmUQDhG6', {
+              method: 'GET',
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': token.token_type + ' ' + token.access_token
+              }
+            })
+            const data = await result.json();
+            console.log(data);
+          }
+
+          // Getting Trending Music from spotify using token
+          const getNewMusic = async () => {
+            const result = await fetch('https://api.spotify.com/v1/browse/new-releases?country=TT&limit=5', {
+              method: 'GET',
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': token.token_type + ' ' + token.access_token
+              }
+            })
+            const data = await result.json();
+            //newMusic = data.albums.items;
+            //console.log(newMusic);
+            return data.albums.items;
+          }
+
+          // Getting New Music from spotify using token
+          const getTrendingMusic = async () => {
+            const result = await fetch('https://api.spotify.com/v1/browse/featured-playlists?country=TT&timestamp=2022-04-10T09%3A00%3A00&limit=5', {
+              method: 'GET',
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': token.token_type + ' ' + token.access_token
+              }
+            })
+            const data = await result.json();
+            console.log(data);
+          }
+
+
+          auth().then(() => {
+            getNewMusic();
+          })
+          return {
+            message, auth, getMusic, getNewMusic, getTrendingMusic, newMusic, newMusicReady
+          }
+        },
+      })
+      app.use(Quasar)
+      app.mount("#app")
+    </script>
+
+    <script type="module" src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quasar@2.6.6/dist/quasar.umd.prod.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const loadEl = document.querySelector("#load");
         // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
         // // The Firebase SDK is initialized and available here!
         //
@@ -61,20 +363,23 @@
         try {
           let app = firebase.app();
           let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+            "auth",
+            "database",
+            "firestore",
+            "functions",
+            "messaging",
+            "storage",
+            "analytics",
+            "remoteConfig",
+            "performance",
+          ].filter((feature) => typeof app[feature] === "function");
+          loadEl.textContent = `Firebase SDK loaded with ${features.join(
+            ", "
+          )}`;
         } catch (e) {
           console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+          loadEl.textContent =
+            "Error loading the Firebase SDK, check the console.";
         }
       });
     </script>
