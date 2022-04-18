@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/quasar@2.6.6/dist/quasar.prod.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <title>about</title>
+  </head>
+  <body>
+    <div class="topnav">
+      <a href="index.html">Home</a>
+      <a class="active" href="about.html">About</a>
+    </div>
+
+    <div id="app">
+      <div class="about-container row justify-evenly col-5">
+        <q-card class="bg-green-13 shadow-12">
+          <q-card-section class="text-h5 text-pink-5">
+            Michelle Khadan
+          </q-card-section>
+          <q-card-section class="text-h6"> 816033027 </q-card-section>
+          <q-card-section class="text-h6">
+            Lead & UI Implementation
+          </q-card-section>
+          <q-separator color="white"></q-separator>
+          <q-card-section class="text-h5 text-pink-5">
+            Cornelius Enill</q-card-section
+          >
+          <q-card-section class="text-h6"> 816027593 </q-card-section>
+          <q-card-section class="text-h6">
+            UI Implementation & Marketing</q-card-section
+          >
+          <q-separator color="white"></q-separator>
+          <q-card-section class="text-h5 text-pink-5">
+            Saleem Wahid
+          </q-card-section>
+          <q-card-section class="text-h6"> 816030374 </q-card-section>
+          <q-card-section class="text-h6">
+            Javascript Implementation, UI Implementation & Marketing
+          </q-card-section>
+          <q-separator color="white"></q-separator>
+          <q-card-section class="text-h5 text-pink-5">
+            Jovani Porter
+          </q-card-section>
+          <q-card-section class="text-h6"> 816032323 </q-card-section>
+          <q-card-section class="text-h6">
+            UI Design & Marketing
+          </q-card-section>
+          <q-separator color="white"></q-separator>
+          <q-card-section class="text-h5 text-pink-5">
+            Brandon Eligon
+          </q-card-section>
+          <q-card-section class="text-h6"> 816023931 </q-card-section>
+          <q-card-section class="text-h6">
+            Javascript Implementation & UI Design
+          </q-card-section>
+        </q-card>
+        
+        <q-card class="desc shadow-12 text-h2 bg-blue-13 col-4"> 
+            <p> This is a simple web service app that interfaces with the spotify api to get data about
+            popular albums and playlists in the region of Trinidad and Tobago </p>
+        </q-card>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quasar@2.6.6/dist/quasar.umd.prod.js"></script>
+    <script>
+      const { createApp } = Vue;
+      const app = createApp({
+        setup() {},
+      });
+      app.use(Quasar);
+      app.mount("#app");
+    </script>
+
+    <style>
+      body {
+        background: rgb(35, 172, 219);
+        background: linear-gradient(
+          90deg,
+          rgba(35, 172, 219, 1) 0%,
+          rgba(196, 52, 227, 1) 54%,
+          rgba(92, 41, 223, 1) 100%
+        );
+        color: black;
+      }
+
+      .q-card {
+        text-align: center;
+        padding: 0 100px 0 100px;
+      }
+
+      .about-container {
+        margin-top: 1vh;
+      }
+      .desc{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+
+      p{
+          line-height: 80px;
+      }
+    </style>
+  </body>
+</html>
